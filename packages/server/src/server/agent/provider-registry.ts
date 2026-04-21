@@ -88,6 +88,17 @@ const PROVIDER_CLIENT_FACTORIES: Record<string, ProviderClientFactory> = {
       logger,
       runtimeSettings,
     }),
+  "custom-acp": (logger, runtimeSettings) => {
+    const command =
+      runtimeSettings?.command?.mode === "replace"
+        ? runtimeSettings.command.argv
+        : ["custom-acp-agent"];
+    return new GenericACPAgentClient({
+      logger,
+      command,
+      env: runtimeSettings?.env,
+    });
+  },
   mock: (logger) => new MockLoadTestAgentClient(logger),
 };
 
