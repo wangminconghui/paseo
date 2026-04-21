@@ -420,6 +420,10 @@ describe("buildProviderRegistry", () => {
     expect(registry["my-agent"].createClient(logger).provider).toBe("my-agent");
     expect(mockState.constructorArgs.genericAcp).toEqual([
       {
+        command: ["custom-acp-agent"],
+        env: undefined,
+      },
+      {
         command: ["my-agent", "--acp"],
         env: {
           ACP_TOKEN: "secret",

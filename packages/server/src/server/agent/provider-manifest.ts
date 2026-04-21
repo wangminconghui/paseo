@@ -176,6 +176,14 @@ export const AGENT_PROVIDER_DEFINITIONS: AgentProviderDefinition[] = [
     defaultModeId: null,
     modes: [],
   },
+  {
+    id: "custom-acp",
+    label: "Custom ACP Agent",
+    description:
+      "Generic Agent Client Protocol provider — configure any ACP-compatible CLI tool via runtimeSettings",
+    defaultModeId: null,
+    modes: [],
+  },
 ];
 
 export const DEV_AGENT_PROVIDER_DEFINITIONS: AgentProviderDefinition[] = [
